@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ua  ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин одягу</title>
+    <script src="https://kit.fontawesome.com/24e14e3299.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        body{
+    margin: 0;
+    font-family: 'Forum', cursive;
+}
+.car-list li{
+    margin-left: 15px;
+    padding: 20px;
+    background-color: gray;
+    color: azure;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.car-list li:hover{
+    color: gray;
+    background-color:azure ;
+}
+.active-li{
+    color: rgb(42, 42, 42) !important;
+    background-color:rgb(9, 255, 0) !important;
+}
+.car-list{
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+    padding: 20px;
+}
+#container{
+    background : linear-gradient(to right bottom, rgb(215, 215, 215), #fff) ;
+    padding: 30px;
+}
+.content{
+   
+    margin: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.content-img img{
+    width: 100%;
+}
+.content-img{
+    width: 50%;
+    text-align: center;
+    padding:  0px 10px;
+
+}
+.content-info{
+    margin: 10px;
+    padding:  10px 10px 10px 0;
+    display: flex;
+
+}
+.content-item{
+    background-color: rgb(212, 212, 212);
+    padding: 10px 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 3px solid rgb(9, 255, 0) ;
+}
+.content-about{
+    background-color: rgb(212, 212, 212);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+
+}
+.bold{
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+.price-btn{
+    margin: 10px auto;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-weight: 900;
+    border: none;
+    box-shadow: 0px 0px 10px rgb(9, 255, 0) ;
+}
+.mn-tx{
+    font-family: 'forum' cursive;
+    font-size: 1.6rem;
+    background-color: rgb(123, 38, 38);
+    color: rgb(227, 226, 226);
+    border-radius: 150px;
+    display: flex;
+    justify-content: center;
+}
+body{
+    background-color: rgb(53, 156, 135);
+}
+    </style>
+</head>
+
+<body>
+    
+   
+
+    <button class="btn-menu fas fa-bars"></button>
+
+    <div class="hidden-menu-div hide-menu">
+        <div class="div-link">
+            <ul class="hidden-menu-ul hide-menu">
+                <p class="mn-tx"><b> Що є на нашому сайті:</b></p>
+                <a href="#">
+                    <li class="hidden-menu-li">Багатий вибір різного одягу</li>
+                </a>
+                <a href="#">
+                    <li class="hidden-menu-li">Верхній та нижній одяг</li>
+                </a>
+                <a href="#">
+                    <li class="hidden-menu-li">Bзуття</li>
+                </a>
+                <a href="#">
+                    <li class="hidden-menu-li">Головні убори</li>
+                </a>
+                <a href="#">
+                    <a href="http://www.youtube.com/watch?v=dQw4w9WgXcQ">  <li class="hidden-menu-li">Народний одяг</li></a>  
+                </a>
+            </ul>
+        </div>
+    </div>
+    
+    <!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div class="menu">
+            <ul class="car-list">
+                <li v-for="(item, index) in array" v-on:click="numberCar(index)"
+                    v-bind:class="{'active-li' : selectIndex == index}">
+                    {{item.name}}  
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="content-info">
+                <div class="content-img">
+                    <img class="od" v-bind:src="currentCar.image" alt="">
+                </div>
+                <div class="">
+                    <div class="content-item"><span class="bold"> Бренд - </span>{{currentCar.brand}} </div>
+                    <div class="content-item"><span class="bold"> Тип - </span> {{currentCar.model}} </div>
+                    <div class="content-item"><span class="bold"> Рік - </span> {{currentCar.year}} </div>
+                    <div class="content-item"><span class="bold"> Розмір - </span>{{currentCar.color}} </div>
+                    <div v-if="priceShow == true" class="content-item"><span class="bold">Ціна -
+                        </span>{{currentCar.price}} ₴
+                    </div>
+                    <button class="price-btn" v-on:click=" showPrice">Ціна </button>
+                </div>
+            </div>
+            <div class="content-about"><span class="bold"> Опис </span>
+                <p>{{currentCar.about}} </p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+   <footer>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="socio-menu">
+            <a class="socio-item" href="https://www.facebook.com/">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a class="socio-item" href="https://www.instagram.com/">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+<div class="col-md-6 ">
+          <div class="text ">
+            <p>@2022 Робота виконана Костенко Тимуром</p>
+                <p>Соц-мережі сайта:</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="preloader">
+    <div>
+        <h2>Ласкаво просимо на наш сайт</h2>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="Script.js"></script>
+    <script src="script2.js"></script>
+</body>
+
+
+
+</body>
+
+</html>

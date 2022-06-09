@@ -1,0 +1,38 @@
+.preloader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(137, 255, 253);
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+    transition: 1.8s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.preloader h2{
+    font-size: 4em;
+    letter-spacing: 20px;
+    animation: preloader-anim 2s infinite alternate ;
+}
+@keyframes preloader-anim {
+    0%{
+        color: rgb(117, 219, 217);
+    }
+    20%{
+        color: rgb(107, 201, 200);
+    }
+    40%{
+        color: rgb(96, 181, 179);
+    }
+    60%{
+        color: rgb(82, 154, 153);
+    }
+    80%{
+        color: rgb(65, 126, 125);
+    }
+    100%{
+        color: rgb(44, 87, 86);
+    }
+}
